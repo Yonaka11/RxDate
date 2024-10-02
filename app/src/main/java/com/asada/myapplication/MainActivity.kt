@@ -87,7 +87,7 @@ fun HomeScreen(){
 
         Column {GreetingText(
             message = DayAdder(28).format(dateformat),
-            from = "28 Days",
+            from = "28 Days  ",
 
         )
 
