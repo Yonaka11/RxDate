@@ -81,7 +81,7 @@ fun DayAdder( days: Int):LocalDateTime {
 fun HomeScreen(){
     var calcium = LocalDateTime.now().plusDays(28)
     var dateformat = DateTimeFormatter.ofPattern("MM-dd-yyyy")
-    var st28days = calcium.format(dateformat)
+        var st28days = calcium.format(dateformat)
 
 
 
