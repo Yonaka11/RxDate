@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.DatePicker
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -18,8 +19,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.modifier.modifierLocalConsumer
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -84,7 +89,11 @@ fun HomeScreen(){
         var st28days = calcium.format(dateformat)
 
 
-
+        Image(painter = painterResource(id = R.drawable.bg2), contentDescription = "Background image",
+            modifier = Modifier.fillMaxSize()
+                .alpha(0.30f),
+            contentScale = ContentScale.Crop)
+    
         Column {GreetingText(
             message = DayAdder(28).format(dateformat),
             from = "28 Days  ",
