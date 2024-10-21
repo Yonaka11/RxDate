@@ -1,7 +1,10 @@
 package com.asada.myapplication
 
+import android.content.Context
 import android.content.res.Resources
 import android.os.Bundle
+import android.util.DisplayMetrics
+import android.view.WindowManager
 import android.widget.DatePicker
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,7 +16,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 
 import androidx.compose.runtime.Composable
@@ -86,15 +92,22 @@ fun DayAdder( days: Int):LocalDateTime {
 fun HomeScreen(){
     var calcium = LocalDateTime.now().plusDays(28)
     var dateformat = DateTimeFormatter.ofPattern("MM-dd-yyyy")
-        var st28days = calcium.format(dateformat)
+    var st28days = calcium.format(dateformat)
+    val width =  Resources.getSystem().getDisplayMetrics().widthPixels
+    val height = Resources.getSystem().getDisplayMetrics().heightPixels
+    val metrics = getScreenResolution(this)
+    val scrollState = rememberScrollState()
+
 
 
         Image(painter = painterResource(id = R.drawable.bg2), contentDescription = "Background image",
-            modifier = Modifier.fillMaxSize()
-                .alpha(0.30f),
+            modifier = Modifier.height(height.dp)
+                .width(width.dp)
+                .alpha(0.30f)
+                ,
             contentScale = ContentScale.Crop)
     
-        Column {GreetingText(
+        Column(modifier = Modifier.verticalScroll(scrollState)) {GreetingText(
             message = DayAdder(28).format(dateformat),
             from = "28 Days  ",
 
@@ -128,6 +141,12 @@ fun HomeScreen(){
         }
     }
 
+    fun getScreenResolution(context: Context): Pair<Int, Int> {
+        val metrics = DisplayMetrics()
+
+        return Pair(metrics.heightPixels.toInt(), metrics.widthPixels)
+
+    }
 
 
 
