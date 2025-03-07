@@ -140,6 +140,164 @@ fun HomeScreen(){
 
         }
     }
+@Composable
+fun TalA(){
+    var calcium = LocalDateTime.now().plusDays(28)
+    var dateformat = DateTimeFormatter.ofPattern("MM-dd-yyyy")
+    var st28days = calcium.format(dateformat)
+    val width =  Resources.getSystem().getDisplayMetrics().widthPixels
+    val height = Resources.getSystem().getDisplayMetrics().heightPixels
+    val metrics = getScreenResolution(this)
+    val scrollState = rememberScrollState()
+
+
+
+        Image(painter = painterResource(id = R.drawable.bg2), contentDescription = "Background image",
+            modifier = Modifier.height(height.dp)
+                .width(width.dp)
+                .alpha(0.30f)
+                ,
+            contentScale = ContentScale.Crop)
+    
+        Column(modifier = Modifier.verticalScroll(scrollState)) {GreetingText(
+            message = DayAdder(28).format(dateformat),
+            from = "28 Days  ",
+
+        )
+
+
+            GreetingText(
+                message = DayAdder(30).format(dateformat),
+                from = "30 Days",
+
+            )
+
+            GreetingText(
+                message = DayAdder(60).format(dateformat),
+                from = "60 Days",
+
+            )
+
+            GreetingText(
+                message = DayAdder(90).format(dateformat),
+                from = "90 Days",
+
+            )
+
+            GreetingText(
+                message = DayAdder(180).format(dateformat),
+                from = "180 Days",
+
+            )
+
+        }
+    }
+@Composable
+fun TalB(){
+    var calcium = LocalDateTime.now().plusDays(28)
+    var dateformat = DateTimeFormatter.ofPattern("MM-dd-yyyy")
+    var st28days = calcium.format(dateformat)
+    val width =  Resources.getSystem().getDisplayMetrics().widthPixels
+    val height = Resources.getSystem().getDisplayMetrics().heightPixels
+    val metrics = getScreenResolution(this)
+    val scrollState = rememberScrollState()
+
+
+
+        Image(painter = painterResource(id = R.drawable.bg2), contentDescription = "Background image",
+            modifier = Modifier.height(height.dp)
+                .width(width.dp)
+                .alpha(0.30f)
+                ,
+            contentScale = ContentScale.Crop)
+    
+        Column(modifier = Modifier.verticalScroll(scrollState)) {GreetingText(
+            message = DayAdder(28).format(dateformat),
+            from = "28 Days  ",
+
+        )
+
+
+            GreetingText(
+                message = DayAdder(30).format(dateformat),
+                from = "30 Days",
+
+            )
+
+            GreetingText(
+                message = DayAdder(60).format(dateformat),
+                from = "60 Days",
+
+            )
+
+            GreetingText(
+                message = DayAdder(90).format(dateformat),
+                from = "90 Days",
+
+            )
+
+            GreetingText(
+                message = DayAdder(180).format(dateformat),
+                from = "180 Days",
+
+            )
+
+        }
+    }
+@Composable
+fun TalC(){
+    var calcium = LocalDateTime.now().plusDays(28)
+    var dateformat = DateTimeFormatter.ofPattern("MM-dd-yyyy")
+    var st28days = calcium.format(dateformat)
+    val width =  Resources.getSystem().getDisplayMetrics().widthPixels
+    val height = Resources.getSystem().getDisplayMetrics().heightPixels
+    val metrics = getScreenResolution(this)
+    val scrollState = rememberScrollState()
+
+
+
+        Image(painter = painterResource(id = R.drawable.bg2), contentDescription = "Background image",
+            modifier = Modifier.height(height.dp)
+                .width(width.dp)
+                .alpha(0.30f)
+                ,
+            contentScale = ContentScale.Crop)
+    
+        Column(modifier = Modifier.verticalScroll(scrollState)) {GreetingText(
+            message = DayAdder(28).format(dateformat),
+            from = "28 Days Insulin Vial  ",
+
+        )
+
+
+            GreetingText(
+                message = DayAdder(30).format(dateformat),
+                from = "30 Days Sodium Chloride",
+
+            )
+
+            GreetingText(
+                message = DayAdder(60).format(dateformat),
+                from = "60 Days Rocuronium",
+
+            )
+
+            GreetingText(
+                message = DayAdder(90).format(dateformat),
+                from = "90 Days Succinylcholine Inj",
+
+            )
+
+            GreetingText(
+                message = DayAdder(180).format(dateformat),
+                from = "180 Days Famotidine Inj",
+
+            )
+
+        }
+    }
+
+
 
     fun getScreenResolution(context: Context): Pair<Int, Int> {
         val metrics = DisplayMetrics()
